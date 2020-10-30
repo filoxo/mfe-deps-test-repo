@@ -1,12 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import About from "./about.component.js";
 
 function Home({ name }) {
   return <h2>{name} is mounted!</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
 }
 
 function Users() {
