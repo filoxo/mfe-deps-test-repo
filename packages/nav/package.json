@@ -26,6 +26,7 @@
     "svelte-jester": "^1.0.6"
   },
   "dependencies": {
+    "rxjs": "^6.6.3",
     "single-spa-svelte": "^2.0.0",
     "sirv-cli": "^0.4.4"
   }

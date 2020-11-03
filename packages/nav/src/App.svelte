@@ -1,5 +1,6 @@
 <script>
-  export let name;
+  import { BehaviorSubject } from 'rxjs'
+  export let name
 </script>
 
 <style>

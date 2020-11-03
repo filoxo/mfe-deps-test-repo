@@ -1,19 +1,20 @@
-import svelte from "rollup-plugin-svelte";
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import livereload from "rollup-plugin-livereload";
-import { terser } from "rollup-plugin-terser";
+import svelte from 'rollup-plugin-svelte'
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import livereload from 'rollup-plugin-livereload'
+import { terser } from 'rollup-plugin-terser'
 
-const production = !process.env.ROLLUP_WATCH;
+const production = !process.env.ROLLUP_WATCH
 
 export default {
-  input: "src/example-nav.js",
+  input: 'src/example-nav.js',
   output: {
     sourcemap: true,
-    format: "system",
+    format: 'system',
     name: null, // ensure anonymous System.register
-    file: "dist/example-nav.js",
+    file: 'dist/example-nav.js',
   },
+  external: ['rxjs'],
   plugins: [
     svelte({
       // enable run-time checks when not in production
@@ -31,7 +32,7 @@ export default {
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
     resolve({
       browser: true,
-      dedupe: ["svelte"],
+      dedupe: ['svelte'],
     }),
     commonjs(),
 
@@ -41,7 +42,7 @@ export default {
 
     // Watch the `dist` directory and refresh the
     // browser on changes when not in production
-    !production && livereload("dist"),
+    !production && livereload('dist'),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
@@ -50,21 +51,21 @@ export default {
   watch: {
     clearScreen: false,
   },
-};
+}
 
 function serve() {
-  let started = false;
+  let started = false
 
   return {
     writeBundle() {
       if (!started) {
-        started = true;
+        started = true
 
-        require("child_process").spawn("npm", ["run", "serve", "--", "--dev"], {
-          stdio: ["ignore", "inherit", "inherit"],
+        require('child_process').spawn('npm', ['run', 'serve', '--', '--dev'], {
+          stdio: ['ignore', 'inherit', 'inherit'],
           shell: true,
-        });
+        })
       }
     },
-  };
+  }
 }
