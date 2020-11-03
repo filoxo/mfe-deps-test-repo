@@ -20,6 +20,13 @@ Below is a summary of the packages.
   - externals: []
   - bundler: Rollup
 
+- **login**
+
+  - framework: react
+  - externals: [...webpack-single-spa-react-typescript.externals]
+  - bundler: Webpack
+  - syntax: TypeScript
+
 ## Development
 
 - `git clone` this project
