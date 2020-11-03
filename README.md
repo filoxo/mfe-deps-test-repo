@@ -9,9 +9,16 @@ The various packages will have different setups to ensure widest support and to 
 Below is a summary of the packages.
 
 - **home**
+
   - framework: react
   - externals: [...webpack-single-spa-react.externals, rxjs]
   - bundler: Webpack
+
+- **nav**
+
+  - framework: svelte
+  - externals: []
+  - bundler: Rollup
 
 ## Development
 
