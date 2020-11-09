@@ -1,13 +1,13 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import About from "./about.component.js";
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import About from './about.component.js'
 
 function Home({ name }) {
-  return <h2>{name} is mounted!</h2>;
+  return <h2>{name} is mounted!</h2>
 }
 
 function Users() {
-  return <h2>Users</h2>;
+  return <h2>Users</h2>
 }
 
 export default function Root(props) {
@@ -30,5 +30,5 @@ export default function Root(props) {
         </Route>
       </Switch>
     </Router>
-  );
+  )
 }
